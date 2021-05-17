@@ -1,0 +1,124 @@
+// out: style.css, compress: false, sourceMap: false
+
+@import "base/lib-mixins";
+@import "base/lib-reset";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+img {
+    vertical-align: top;
+}
+
+.video-main {
+    background: url(../img/bg-video.png) no-repeat 50% 0;
+    background-size: cover;
+}
+.video-bar {
+    padding: 31px 0;
+    display: flex;
+    margin-left: 15px;
+}
+.video-item {
+    flex: 1;
+    margin-right: 15px;
+    padding: 10px 10px 10px 15px;
+    background: url(../img/video-item.png) no-repeat;
+    background-size: contain;
+    .title {
+        font-size: 13px;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .video-js.vjs-big-play-centered .vjs-big-play-button {
+        width: 1.63332em;
+        margin-left: -.81666em;
+        border-radius: 50%;
+    }
+    .vjs-volume-panel, .vjs-progress-control, .vjs-time-control, .vjs-picture-in-picture-control {
+        display: none;
+    }
+
+    @media screen and (max-width: 320px) {
+        .title {
+            font-size: 12px;
+        }
+
+    }
+}
+
+.module {
+    .content {
+        display: none;
+        // height: 0;
+        // overflow: hidden;
+    }
+    .toggle {
+        position: relative;
+        .text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            img { height: 14px; }
+        }
+        .text-close {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            img {
+                height: 14px;
+            }
+        }
+        .light {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -55%);
+            animation:  1s flash 0s infinite alternate;
+            img { width: 170px; }
+        }
+        &.toggle-close {
+            .text { display: none; }
+            .text-close { display: block; }
+            .light { display: none; }
+        }
+    }
+}
+.file-bar {
+    display: flex;
+    padding: 20px 5px;
+    background-color: #18208b;
+    .file {
+        flex: 1;
+        margin: 0 5px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+.signup-button {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: 0 30px;
+    img {
+        width: 100%;
+    }
+}
+
+.TMG_gallery_wrap .TMG_txt {
+    padding-bottom: 20px !important;
+}
+
+@keyframes flash {
+    from { opacity: 1; }
+    to { opacity: .5; }
+}

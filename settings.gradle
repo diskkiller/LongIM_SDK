@@ -1,0 +1,1 @@
+include ':app', ':im_push_service_sdk',':picture_library', ':ucrop',':recordVideo'

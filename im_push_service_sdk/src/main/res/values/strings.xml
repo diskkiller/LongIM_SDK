@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Common</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_launch">@string/app_name</string>
+    <string name="title_activity_user">UserActivity</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_personal">PersonalActivity</string>
+    <string name="title_activity_group_create">GroupCreateActivity</string>
+    <string name="title_activity_group_member">GroupMemberActivity</string>
+
+
+    <string name="btn_follow">Follow</string>
+    <string name="btn_send_start">发起聊天</string>
+    <string name="btn_preview">预览</string>
+    <string name="btn_send">发送</string>
+
+    <string name="g_font_file">@null</string>
+
+    <string name="app_drag_delete">拖动到此处删除</string>
+    <string name="app_let_go_drag_delete">松手即可删除</string>
+    <string name="app_wechat_send">发送</string>
+    <string name="app_wechat_send_num">发送(%1$d/%2$d)</string>
+    <string name="record_too_short">录音时间太短</string>
+    <string name="string_help_text">当前应用缺少正常运行需要的权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限</string>
+    <string name="string_help_audio">不开启录音权限权限，无法使用语\n\n音聊天功能哦～</string>
+    <string name="string_help_gallery">访问相册需要开启如下权限哦\n\n* 访问设备照片，媒体内容和文件\n\n* 创建设备相片，媒体内容或文件</string>
+    <string name="string_help_camera">拍摄需要开启如下权限哦\n\n拍照片和录制视频</string>
+
+
+
+</resources>

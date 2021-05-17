@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/len_4"
+    android:paddingEnd="@dimen/len_16"
+    android:paddingStart="@dimen/len_56"
+    android:paddingTop="@dimen/len_4">
+
+
+    <com.longbei.im_push_service_sdk.common.app.widget.PortraitView
+        android:id="@+id/im_portrait"
+        android:layout_width="@dimen/portraitSize"
+        android:layout_height="@dimen/portraitSize"
+        android:layout_alignParentRight="true"
+        android:padding="1px"
+        android:src="@drawable/default_portrait"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2dp" />
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/len_8"
+        android:minHeight="@dimen/portraitSize"
+        android:layout_toLeftOf="@id/im_portrait">
+
+        <com.longbei.im_push_service_sdk.common.app.widget.IMRoundImageView
+            android:id="@+id/im_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+             />
+        <ImageView
+            android:layout_width="@dimen/len_40"
+            android:layout_height="@dimen/len_40"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/picture_icon_video_play"
+            />
+
+    </FrameLayout>
+
+
+    <com.longbei.im_push_service_sdk.common.app.kit.ui.widget.Loading
+        android:id="@+id/loading"
+        android:layout_width="@dimen/len_20"
+        android:layout_height="@dimen/len_20"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/fl_content"
+        android:layout_centerInParent="true"
+        android:padding="1px"
+        app:gAutoRun="false"
+        app:gBackgroundColor="@null"
+        app:gForegroundColor="@color/colorAccent"
+        app:gForegroundLineSize="1dp"
+        app:gProgressFloat="1" />
+
+</RelativeLayout>

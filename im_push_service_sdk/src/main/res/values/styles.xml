@@ -1,0 +1,416 @@
+<resources>
+
+    <style name="Theme.private" parent="Theme.AppCompat">
+        <!-- 复写3个主要的色彩. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Genius style -->
+        <item name="gTextViewStyle">@style/Genius.Widget.TextView</item>
+        <item name="gButtonStyle">@style/Genius.Widget.Button</item>
+        <item name="gFloatActionButtonStyle">@style/Genius.Widget.FloatActionButton</item>
+        <item name="gSeekBarStyle">@style/Genius.Widget.SeekBar</item>
+        <item name="gCheckBoxStyle">@style/Genius.Widget.CompoundButton.CheckBox</item>
+        <item name="gEditTextStyle">@style/Genius.Widget.EditText</item>
+        <item name="gLoadingStyle">@style/Genius.Widget.Loading</item>
+        <item name="gImageViewStyle">@style/Genius.Widget.ImageView</item>
+
+        <!--背景色-->
+        <item name="android:windowBackground">@color/windowsBackground</item>
+
+        <!--设置没有Title-->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <!--ToolBar高度-->
+        <item name="actionBarSize">@dimen/len_48</item>
+        <!-- 左上角返回Icon -->
+        <item name="homeAsUpIndicator">@drawable/ic_back</item>
+
+        <!--初始化自己定义的3个属性值-->
+        <item name="toolbarTitleSize">@dimen/font_18</item>
+        <item name="toolbarTitleColor">@color/white_alpha_224</item>
+        <item name="toolbarMenuIconColor">@color/white_alpha_224</item>
+
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.private" />
+
+    <style name="AppTheme.Dialog.Alert.Light" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+
+
+
+    <style name="AppTheme" parent="AppTheme.Base">
+        <!--
+        <item name="toolbarStyle">@style/Widget.Toolbar</item>
+        <item name="toolbarNavigationButtonStyle">@style/Widget.ToolbarNavigationButtonStyle</item>
+        <item name="actionOverflowButtonStyle">@style/Widget.ActionButton.Overflow</item>
+        <item name="actionOverflowMenuStyle">@style/Widget.PopupMenu.Overflow</item>
+        -->
+
+        <!--顶部导航条中的Icon和二级字体的颜色-->
+        <item name="colorControlNormal">@color/white_alpha_240</item>
+        <item name="colorControlActivated">@color/textPrimary</item>
+    </style>
+
+    <style name="AppTheme.TransStatusBar.Base" parent="AppTheme">
+        <!--去除顶部的状态栏-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFrame">@null</item>
+    </style>
+
+    <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base" />
+
+    <style name="AppTheme.Main" parent="AppTheme.TransStatusBar">
+        <item name="toolbarTitleColor">@color/white</item>
+        <item name="toolbarMenuIconColor">@color/white</item>
+        <item name="colorControlHighlight">@color/textSecond</item>
+        <item name="android:windowBackground">@color/windowsBackgroundLight</item>
+    </style>
+
+    <style name="AppTheme.Account" parent="AppTheme.TransStatusBar" />
+
+    <style name="AppTheme.Message" parent="AppTheme.TransStatusBar">
+        <item name="android:windowBackground">@color/windowsBackgroundLight</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowNoTitle">true</item>
+
+    </style>
+
+    <style name="AppTheme.Group.Create" parent="AppTheme.TransStatusBar">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="TextAppearance.Title" parent="@style/TextAppearance.AppCompat.Title">
+        <item name="android:textSize">?attr/toolbarTitleSize</item>
+        <item name="android:textColor">?attr/toolbarTitleColor</item>
+    </style>
+
+
+
+
+
+
+
+    <style name="Genius.Widget.TextView" parent="android:Widget.TextView">
+        <item name="gFont">@string/g_font_file</item>
+    </style>
+
+    <style name="Genius.Widget.Button" parent="Genius.Widget.Button.Base" />
+
+    <style name="Genius.Widget.FloatActionButton" parent="">
+        <item name="gTouchColor">@color/g_default_base_ripple</item>
+        <item name="gBackgroundColor">@color/g_default_float_action_bg</item>
+    </style>
+
+    <style name="Genius.Widget.CompoundButton.CheckBox" parent="android:Widget.CompoundButton.CheckBox">
+        <item name="gFont">@string/g_font_file</item>
+        <item name="gMarkColor">@color/g_default_check_box</item>
+        <item name="gBorderSize">@dimen/g_checkBox_borderSize</item>
+        <item name="gIntervalSize">@dimen/g_checkBox_intervalSize</item>
+        <item name="gMarkSize">@dimen/g_checkBox_markSize</item>
+    </style>
+
+    <style name="Genius.Widget.EditText" parent="android:Widget.EditText">
+        <item name="android:paddingTop">@dimen/g_editText_paddingV</item>
+        <item name="android:paddingBottom">@dimen/g_editText_paddingV</item>
+        <item name="android:paddingLeft">@dimen/g_editText_paddingH</item>
+        <item name="android:paddingRight">@dimen/g_editText_paddingH</item>
+        <item name="gFont">@string/g_font_file</item>
+        <item name="android:textColorHint">@color/g_default_edit_view_hint</item>
+        <item name="gLineColor">@color/g_default_edit_view_line</item>
+        <item name="gLineSize">@dimen/g_editText_lineSize</item>
+        <item name="gHintTitle">slide</item>
+        <item name="gHintTitleTextSize">@dimen/g_editText_hintTitleTextSize</item>
+    </style>
+
+    <style name="Genius.Widget.SeekBar" parent="">
+        <item name="gFont">@string/g_font_file</item>
+        <item name="gMirrorForRtl">true</item>
+        <item name="gAllowTrackClickToDrag">true</item>
+
+        <item name="gMin">0</item>
+        <item name="gMax">100</item>
+        <item name="gValue">0</item>
+
+        <item name="gTickSize">@dimen/g_seekBar_tickSize</item>
+        <item name="gThumbSize">@dimen/g_seekBar_thumbSize</item>
+        <item name="gTouchSize">@dimen/g_seekBar_touchSize</item>
+        <item name="gTrackStroke">@dimen/g_seekBar_trackStroke</item>
+        <item name="gScrubberStroke">@dimen/g_seekBar_scrubberStroke</item>
+
+        <item name="gScrubberColor">@color/g_default_seek_bar_scrubber</item>
+        <item name="gTrackColor">@color/g_default_seek_bar_track</item>
+        <item name="gThumbColor">@color/g_default_seek_bar_thumb</item>
+        <item name="gRippleColor">@color/g_default_seek_bar_ripple</item>
+
+        <item name="gIndicator">auto</item>
+        <item name="gIndicatorBackgroundColor">@color/g_default_seek_bar_indicator</item>
+        <item name="gIndicatorTextAppearance">@style/Genius.Widget.BalloonMarker.TextAppearance
+        </item>
+        <item name="gIndicatorTextPadding">@dimen/g_balloonMarker_textPadding</item>
+        <item name="gIndicatorSeparation">@dimen/g_balloonMarker_separation</item>
+    </style>
+
+    <style name="Genius.Widget.BalloonMarker" parent="android:Widget">
+        <item name="gFont">@string/g_font_file</item>
+        <item name="gMarkerTextAppearance">@style/Genius.Widget.BalloonMarker.TextAppearance
+        </item>
+        <item name="gMarkerTextPadding">@dimen/g_balloonMarker_textPadding</item>
+        <item name="gMarkerBackgroundColor">@color/g_default_seek_bar_indicator</item>
+        <item name="gMarkerElevation">@dimen/g_balloonMarker_elevation</item>
+    </style>
+
+    <style name="Genius.Widget.BalloonMarker.TextAppearance" parent="android:TextAppearance.Small">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+
+    <style name="Genius.Widget.Loading" parent="">
+        <item name="gBackgroundLineSize">@dimen/g_loading_lineSize</item>
+        <item name="gForegroundLineSize">@dimen/g_loading_lineSize</item>
+
+        <item name="gBackgroundColor">@color/g_default_background</item>
+        <item name="gForegroundColor">@array/g_default_loading_fg</item>
+
+        <item name="gProgressStyle">circle</item>
+        <item name="gAutoRun">true</item>
+    </style>
+
+    <style name="Genius.Widget.ImageView" parent="">
+        <item name="gTouchColor">@color/g_default_base_ripple</item>
+        <item name="gTouchEffect">none</item>
+        <item name="gTouchCornerRadius">@dimen/g_imageView_touch_corners_radius</item>
+        <item name="android:background">@null</item>
+    </style>
+
+
+
+
+
+
+    <style name="Im.ImageButton.Borderless" parent="@android:style/Widget.Button">
+        <item name="android:background">@color/white</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+
+    <style name="im_share_dialog_buttom">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">3dip</item>
+        <item name="android:layout_marginTop">5dip</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="im_add_attach_text">
+        <item name="android:textColor">@color/gray_7e</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingTop">5dip</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+
+
+    <style name="BaseNoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+    <!--白色主题样式，，注意每一项都不能少-->
+    <style name="picture.white.style" parent="BaseNoActionBarTheme">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/app_color_white</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/app_color_white</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">true</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/ic_back_arrow</item>
+        <!--标题下拉箭头-->
+        <item name="picture.arrow_down.icon">@drawable/ic_orange_arrow_down</item>
+        <!--标题上拉箭头-->
+        <item name="picture.arrow_up.icon">@drawable/ic_orange_arrow_up</item>
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">@color/app_color_black</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">@color/app_color_black</item>
+        <!--图片列表勾选样式-->
+        <item name="picture.checked.style">@drawable/picture_checkbox_selector</item>
+        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        <item name="picture.style.checkNumMode">false</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">true</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/app_color_fa</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">@color/picture_list_sina_text_color</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">@color/picture_list_sina_text_color</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/picture_num_oval</item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/app_color_white</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">@color/app_color_black</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">@color/picture_list_sina_text_color
+        </item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/picture_color_fa</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/ic_back_arrow</item>
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/app_color_white</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/app_color_white</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/app_color_black</item>
+        <!--相册文件夹列表选中图标-->
+        <item name="picture.folder_checked_dot">@drawable/picture_orange_oval</item>
+    </style>
+
+    <!--QQ数字风格样式，注意每一项都不能少-->
+    <style name="picture.QQ.style" parent="BaseNoActionBarTheme">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/app_color_blue</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/app_color_blue</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">false</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/picture_icon_back</item>
+        <!--标题下拉箭头-->
+        <item name="picture.arrow_down.icon">@drawable/picture_icon_arrow_down</item>
+        <!--标题上拉箭头-->
+        <item name="picture.arrow_up.icon">@drawable/picture_icon_arrow_up</item>
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">@color/app_color_white</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">@color/app_color_white</item>
+        <!--图片列表勾选样式-->
+        <item name="picture.checked.style">@drawable/checkbox_num_selector</item>
+        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        <item name="picture.style.checkNumMode">true</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">false</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/app_color_fa</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">@color/app_color_blue</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">@color/app_color_blue</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/num_oval_blue</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">@color/app_color_white</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">@color/app_color_blue</item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/app_color_blue</item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/app_color_fa</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/picture_icon_back</item>
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/app_color_blue</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/app_color_blue</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/app_color_white</item>
+        <!--相册文件夹列表选中图标-->
+        <item name="picture.folder_checked_dot">@drawable/picture_orange_oval</item>
+    </style>
+
+
+    <!--新浪微博样式，注意每一项都不能少-->
+    <style name="picture.Sina.style" parent="BaseNoActionBarTheme">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/app_color_white</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/app_color_white</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">true</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/ic_back_arrow</item>
+        <!--标题下拉箭头-->
+        <item name="picture.arrow_down.icon">@drawable/ic_orange_arrow_down</item>
+        <!--标题上拉箭头-->
+        <item name="picture.arrow_up.icon">@drawable/ic_orange_arrow_up</item>
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">@color/app_color_53575e</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">@color/app_color_53575e</item>
+        <!--图片列表勾选样式-->
+        <item name="picture.checked.style">@drawable/picture_checkbox_selector</item>
+        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        <item name="picture.style.checkNumMode">false</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">false</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/app_color_fa</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">@color/picture_list_sina_text_color</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">@color/picture_list_sina_text_color</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/num_oval_orange</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">@color/app_color_53575e</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">@color/picture_list_sina_text_color
+        </item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/app_color_white</item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/app_color_fa</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/ic_back_arrow</item>
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/app_color_white</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/app_color_white</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/app_color_black</item>
+        <!--相册文件夹列表选中图标-->
+        <item name="picture.folder_checked_dot">@drawable/picture_orange_oval</item>
+    </style>
+
+
+    <style name="im_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="line">
+        <item name="android:background">@color/gray_7e</item>
+    </style>
+    <style name="line_vertical" parent="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+
+    <style name="mAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+</resources>

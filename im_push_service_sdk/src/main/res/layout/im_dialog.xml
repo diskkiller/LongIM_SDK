@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:background="@color/white"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        >
+
+        <TextView
+            android:id="@id/im_dialog_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:textColor="#686868"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"
+            >
+
+
+
+            <EditText
+                android:id="@id/im_dialog_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/login_back"
+                android:hint="请输入数量"
+                android:maxLength="15"
+                android:textColor="#999999"
+                android:textSize="20sp"
+                android:paddingLeft="10dp"
+                android:visibility="gone"
+                android:inputType="number"
+                />
+
+            <TextView
+                android:id="@id/im_dialog_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="#686868"
+                android:textSize="15sp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+
+        <View
+            style="@style/line_vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="73dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/im_dialog_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textColor="@color/gray_7e"
+                android:text="取消"
+                android:background="@color/white"
+                />
+
+
+            <Button
+                android:id="@+id/im_dialog_ok"
+                android:background="#66B96F"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text=""
+                android:textColor="@color/white"
+                />
+
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

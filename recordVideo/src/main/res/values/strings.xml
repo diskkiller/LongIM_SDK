@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SampleVideo</string>
+    <string name="init_time">00:00</string>
+    <string name="state_off">关闭状态</string>
+    <string name="state_compress">准备压缩</string>
+    <string name="state_compress01">正在压缩</string>
+    <string name="state_compress02">正在压缩.</string>
+    <string name="state_compress03">正在压缩..</string>
+    <string name="state_compress04">正在压缩...</string>
+    <string name="state_compress_error">压缩失败</string>
+    <string name="state_compress_end">压缩完成</string>
+</resources>

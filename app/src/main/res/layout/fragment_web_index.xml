@@ -1,0 +1,46 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.longbei.longim_sdk.fragments.WebFragment"
+    tools:ignore="MissingDefaultResource">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/my_tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_48"
+            app:tabTextColor="@color/gray_7e"
+            app:tabSelectedTextColor="#30e407"
+            app:tabIndicatorColor="#30e407"
+            app:tabIndicatorHeight="2dp"
+            app:tabBackground="@color/yellow_50"
+            app:tabMode="fixed"
+            app:tabPaddingStart="5dp"
+            app:tabPaddingEnd="5dp"
+            >
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <com.longbei.longim_sdk.widgets.WebProgress
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+        <WebView
+            android:id="@+id/ad_wv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+
+
+</FrameLayout>

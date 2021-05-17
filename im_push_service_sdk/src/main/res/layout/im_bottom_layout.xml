@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:layout_marginLeft="12dip"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/im_longClickToSay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/chat_send_btn"
+        android:gravity="center"
+        android:text="按住 说话"
+        android:textColor="#646464"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:id="@+id/im_key_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingRight="6dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+
+
+        <EditText
+        android:id="@+id/edit_content"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/login_edit_normal"
+            android:hint=""
+            android:padding="4dp"
+            android:lineSpacingExtra="0dp"
+            android:lineSpacingMultiplier="1"
+            android:maxHeight="@dimen/len_68"
+            android:textSize="15sp"
+            android:layout_marginRight="5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/textPrimary"
+            android:textColorHint="@color/textSecond"
+            android:textCursorDrawable="@drawable/ic_cursor" />
+
+        <ImageButton
+            android:id="@+id/btn_face"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            style="@style/Im.ImageButton.Borderless"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:scaleType="fitXY"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_msg_face_selector" />
+
+        <ImageView
+            android:id="@+id/btn_submit"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="center_vertical"
+            android:enabled="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:layout_marginRight="0dp"
+            android:src="@drawable/ic_submit"
+            android:tint="@color/textPrimary" />
+    </LinearLayout>
+
+</LinearLayout>

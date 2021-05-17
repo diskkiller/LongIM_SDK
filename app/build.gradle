@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.longbei.longim_sdk"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //指定jdk版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '28.0.3'
+
+    //sign info config
+    signingConfigs {
+        debug {
+            keyAlias DEBUG_KEY_ALIAS
+            keyPassword DEBUG_KEY_PASSWORD
+            storeFile file(DEBUG_STORE_FILE_PATH)
+            storePassword DEBUG_STORE_PASSWORD
+        }
+        release {
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+            storeFile file(RELEASE_STORE_FILE_PATH)
+            storePassword RELEASE_STORE_PASSWORD
+        }
+    }
+
+    //build config
+    buildTypes {
+        release {
+            buildConfigField "boolean", "CRASH_DEBUG", "true"
+            buildConfigField "boolean", "LOG_DEBUG", "true"//custom some build variate
+            buildConfigField "boolean", "USE_CANARY", "false"
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            multiDexKeepProguard file('multidex-config.pro')
+            signingConfig signingConfigs.release    //系统签名打包时注释掉
+        }
+        debug {
+            buildConfigField "boolean", "CRASH_DEBUG", "true"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "USE_CANARY", "true"
+            minifyEnabled false
+            useProguard false
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            multiDexKeepProguard file('multidex-config.pro')
+            signingConfig signingConfigs.release   //系统签名打包时注释掉
+        }
+    }
+
+
+
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
+    //底部按钮
+    implementation "com.google.android.material:material:$rootProject.ext.supportVersion"
+
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
+
+    implementation 'com.qw:soulpermission:1.3.0'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    /* implementation('com.longxin:im-model:3.7.9-SNAPSHOT') {
+            exclude group: 'com.google.guava', module: 'guava'
+            exclude group: 'com.alibaba', module: 'fastjson'
+        }*/
+    implementation project(':im_push_service_sdk')
+
+    //api ('com.long.im.tuita:tuita:1.0.1')
+
+    //    implementation files('libs/im_push_service_sdk-debug.aar')
+}
