@@ -6,8 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import com.longbei.im_push_service_sdk.BuildConfig;
-
 
 /**
  * @version 1.0.0
@@ -15,7 +13,7 @@ import com.longbei.im_push_service_sdk.BuildConfig;
 
 @SuppressWarnings("WeakerAccess")
 public final class Util {
-    public static boolean DEBUG = BuildConfig.DEBUG;
+    public static boolean DEBUG = true;
 
     public static void log(String format, Object... args) {
         if (DEBUG)

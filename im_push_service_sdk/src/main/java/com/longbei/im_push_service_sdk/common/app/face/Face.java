@@ -165,8 +165,9 @@ public class Face {
         String packageName = context.getApplicationInfo().packageName;
         for (int i = 1; i <= 142; i++) {
 
-            // i=1=>  001
+            // i=1=>  fb001
             String key = String.format(Locale.ENGLISH, "fb%03d", i);
+            // i=1=>  face_base_001
             String resStr = String.format(Locale.ENGLISH, "face_base_%03d", i);
 
             // 根据资源名称去拿资源对应的ID

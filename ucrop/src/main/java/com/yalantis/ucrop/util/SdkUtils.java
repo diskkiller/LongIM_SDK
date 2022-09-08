@@ -14,6 +14,6 @@ public class SdkUtils {
      * @return
      */
     public static boolean isQ() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q;
+        return Build.VERSION.SDK_INT >= 29;
     }
 }

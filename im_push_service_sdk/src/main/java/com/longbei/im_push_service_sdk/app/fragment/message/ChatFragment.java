@@ -740,7 +740,7 @@ public abstract class ChatFragment<InitModel>
     @OnClick(R2.id.btn_submit)
     void onSubmitClick() {
         if (mSubmit.isActivated()) {
-            // 发送
+            // 发送  //顾家家居[ft001][ft010][ft106]几个    [fb009][fb011]扣扣
             String content = mContent.getText().toString();
             mContent.setText("");
             mPresenter.pushText(content);
@@ -1226,8 +1226,7 @@ public abstract class ChatFragment<InitModel>
             } else if (viewType == R.layout.cell_chat_audio_right || viewType == R.layout.cell_chat_audio_left) {
                 return new AudioHolder(root);
             } else if (viewType == R.layout.cell_chat_pic_right || viewType == R.layout.cell_chat_pic_left ||
-                    viewType == R.layout.cell_chat_video_right || viewType == R.layout.cell_chat_video_left
-            ) {
+                    viewType == R.layout.cell_chat_video_right || viewType == R.layout.cell_chat_video_left) {
                 return new PicHolder(root);
 
                 // 默认情况下，返回的就是Text类型的Holder进行处理

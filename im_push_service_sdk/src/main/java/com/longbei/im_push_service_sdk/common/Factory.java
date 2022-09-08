@@ -1,15 +1,22 @@
 package com.longbei.im_push_service_sdk.common;
 
+import android.util.Log;
+
 import androidx.annotation.StringRes;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.longbei.im_push_service_sdk.common.app.Application;
 import com.longbei.im_push_service_sdk.common.basepercenter.data.DataSource;
+import com.longbei.im_push_service_sdk.common.basepercenter.model.PushModel;
 import com.longbei.im_push_service_sdk.im.api.message.MsgCreateModel;
 import com.longbei.im_push_service_sdk.im.db.Account;
 import com.longbei.im_push_service_sdk.im.db.Message;
+import com.longbei.im_push_service_sdk.im.db.t_card.GroupCard;
+import com.longbei.im_push_service_sdk.im.db.t_card.GroupMemberCard;
 import com.longbei.im_push_service_sdk.im.db.t_card.MessageCard;
+import com.longbei.im_push_service_sdk.im.db.t_card.UserCard;
 import com.longbei.im_push_service_sdk.im.db.utils.DBFlowExclusionStrategy;
 import com.longbei.im_push_service_sdk.im.lpresenter.dataCenter.group.GroupCenter;
 import com.longbei.im_push_service_sdk.im.lpresenter.dataCenter.group.GroupDispatcher;
@@ -21,6 +28,8 @@ import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
 
 
+import java.lang.reflect.Type;
+import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -185,14 +194,14 @@ public class Factory {
         System.out.println("处理推送来的消息");
 
 
-        Common.isNewPusMsg = true;
+        //Common.isNewPusMsg = true;
 
         //getMessageCenter().test_dispatch(str);
 
         // 普通消息
 
         // 构建一个新的消息
-        MsgCreateModel model = new MsgCreateModel.Builder()
+        /*MsgCreateModel model = new MsgCreateModel.Builder()
                 .receiver("4567", Message.RECEIVER_TYPE_NONE)
                 .content(str, Message.TYPE_STR)
                 .build();
@@ -200,10 +209,10 @@ public class Factory {
         MessageCard card = model.buildCard();
         card.setSenderId("123");
 
-        getMessageCenter().dispatch(card);
+        getMessageCenter().dispatch(card);*/
 
 
-      /*  // 首先检查登录状态
+        // 首先检查登录状态
         if (!Account.isLogin())
             return;
 
@@ -257,7 +266,7 @@ public class Factory {
                 }
 
             }
-        }*/
+        }
     }
 
 

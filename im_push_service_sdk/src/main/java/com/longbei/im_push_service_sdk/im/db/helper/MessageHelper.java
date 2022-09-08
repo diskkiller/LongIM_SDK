@@ -3,6 +3,7 @@ package com.longbei.im_push_service_sdk.im.db.helper;
 import android.net.Network;
 import android.text.TextUtils;
 
+import com.longbei.im_push_service_sdk.app.net.RemoteService;
 import com.longbei.im_push_service_sdk.common.Factory;
 import com.longbei.im_push_service_sdk.im.api.message.MsgCreateModel;
 import com.longbei.im_push_service_sdk.im.db.Message;
@@ -33,13 +34,14 @@ public class MessageHelper {
             @Override
             public void run() {
 
-                // 我们在发送的时候需要通知界面更新状态，Card;
+                //测试代码
                 final MessageCard card = model.buildCard();
-                card.setStatus(Message.STATUS_FAILED);
+                //card.setStatus(Message.STATUS_FAILED);
                 Factory.getMessageCenter().dispatch(card);
 
-
-                /*// 成功状态：如果是一个已经发送过的消息，则不能重新发送
+                /*
+                // 我们在发送的时候需要通知界面更新状态，Card;
+                // 成功状态：如果是一个已经发送过的消息，则不能重新发送
                 // 正在发送状态：如果是一个消息正在发送，则不能重新发送
                 Message message = findFromLocal(model.getId());
                 if (message != null && message.getStatus() != Message.STATUS_FAILED)
@@ -100,7 +102,10 @@ public class MessageHelper {
                         if (rspModel != null && rspModel.success()) {
                             MessageCard rspCard = rspModel.getResult();
                             if (rspCard != null) {
-                                // 成功的调度
+                                // 成功的调度  没有看到发送成功后，本地修改消息状态为成功的代码，
+                                // 所以改变消息状态为成功应该是在服务端收到消息后修改的，
+                                // 成功返回后的消息状态变为成功了（Message.STATUS_DONE），
+                                // 移动端拿到后去数据库进行查找并更新状态
                                 Factory.getMessageCenter().dispatch(rspCard);
                             }
                         } else {
@@ -117,7 +122,11 @@ public class MessageHelper {
                         card.setStatus(Message.STATUS_FAILED);
                         Factory.getMessageCenter().dispatch(card);
                     }
-                });*/
+                });
+
+                */
+
+
             }
         });
     }

@@ -54,7 +54,7 @@ public class PushServiceManager {
      * @param msg
      */
     public void im_sendMessage(MqttMessage msg) {
-        IMSClientFactory.getIMSClient().sendMsg(msg);
+        //IMSClientFactory.getIMSClient().sendMsg(msg);
     }
 
     /**

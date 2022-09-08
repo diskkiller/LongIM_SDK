@@ -19,7 +19,7 @@ public class MessageCard {
     private String id;
     private String content;
     private String attach;
-    private int type;
+    private int type;// 消息类型
     private Date createAt;
     private String groupId;
     private String senderId;
